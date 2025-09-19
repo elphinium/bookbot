@@ -12,7 +12,10 @@ def get_book_text(relative_path:str):
 
 def main():
     print(format_dic(
-        (get_letter_count(get_book_text("./books/frankenstein.txt")))))
+        (get_letter_count(
+            get_book_text(
+                "./books/frankenstein.txt")))))
+    
 
 
 main()

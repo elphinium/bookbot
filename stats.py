@@ -32,6 +32,7 @@ def get_letter_count(text:str):
     
 
 def format_dic(dict_letter_number):
+    """Prend un dictionnaire sous la forme {lettre:nombre} et le transforme sous la forme {"char":lettre,"num":nombre} """
     word_list = []
     for a in dict_letter_number:
         word_list.append({"char":a,
