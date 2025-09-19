@@ -1,4 +1,10 @@
+def get_book_text(relative_path:str):
+    """ Prend en parametre <relative_path:str> un chemin relatif et retourne le contenu du fichier. """
+    file_text = str()
+    with open(relative_path) as f:
+        file_text = f.read()
 
+    return file_text
 
 def get_word_count(text:str):
     """ Prend en paramètre un texte <text> et retourne le nombre de mot """
@@ -9,6 +15,7 @@ def get_word_count(text:str):
     return word_count
 
 def get_letter_count(text:str):
+    """ Prend en paramètre un texte <text> et retourne le nombre d'apparition de chaque lettre """
     alphabet ={
  'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'g': 0,
  'h': 0, 'i': 0, 'j': 0, 'k': 0, 'l': 0, 'm': 0,
@@ -23,3 +30,15 @@ def get_letter_count(text:str):
             alphabet[low_letter] = 1
     return alphabet
     
+
+def format_dic(dict_letter_number):
+    word_list = []
+    for a in dict_letter_number:
+        word_list.append({"char":a,
+                             "num":dict_letter_number[a]})
+    return word_list
+
+# def sort_letter_by_number_of_appariton(dict_letter_number):
+
+
+
