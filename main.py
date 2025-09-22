@@ -1,3 +1,4 @@
+import sys
 from stats import get_word_count
 from stats import get_letter_count
 from stats import format_dic
@@ -11,7 +12,17 @@ def get_book_text(relative_path:str):
     return file_text
 
 def main():
-    relative_path = "./books/frankenstein.txt"
+
+    
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else: 
+        relative_path = sys.argv[1]
+
+    
+    
+             
     book = get_book_text(relative_path)
 
     letter_count = get_letter_count(book)
