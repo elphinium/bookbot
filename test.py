@@ -28,6 +28,7 @@ def main():
     for a in entree:
         word_list.append({"char":a,
                              "num":entree[a]})
+    
         
        
     print(word_list)

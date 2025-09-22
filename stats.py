@@ -24,22 +24,23 @@ def get_letter_count(text:str):
 }
     for letter in text:
         low_letter = letter.lower()
-        if low_letter in alphabet:
-            alphabet[low_letter] += 1
+        if low_letter.isalpha():
+            if low_letter in alphabet:
+                alphabet[low_letter] += 1
+            else:
+                alphabet[low_letter] = 1
         else:
-            alphabet[low_letter] = 1
+            continue
     return alphabet
     
 
 def format_dic(dict_letter_number):
-    """Prend un dictionnaire sous la forme {lettre:nombre} et le transforme sous la forme {"char":lettre,"num":nombre} """
+    """Prend un dictionnaire sous la forme {lettre:nombre}, le transforme sous la forme {"char":lettre,"num":nombre}  et le tri du plus grand nombre vers le plus petit"""
     word_list = []
     for a in dict_letter_number:
         word_list.append({"char":a,
                              "num":dict_letter_number[a]})
+    word_list.sort(reverse=True, key=lambda d: d["num"] )
     return word_list
 
 # def sort_letter_by_number_of_appariton(dict_letter_number):
-
-
-

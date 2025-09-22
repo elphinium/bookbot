@@ -11,11 +11,21 @@ def get_book_text(relative_path:str):
     return file_text
 
 def main():
-    print(format_dic(
-        (get_letter_count(
-            get_book_text(
-                "./books/frankenstein.txt")))))
-    
+    relative_path = "./books/frankenstein.txt"
+    book = get_book_text(relative_path)
 
+    letter_count = get_letter_count(book)
+    sorted_dict = (format_dic(letter_count))
+    word_count = get_word_count(book)
+
+    print(f"============ BOOKBOT ============")
+    print(f"Analyzing book found at {relative_path}...")
+    print(f"----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print(f"--------- Character Count -------")
+    for i in range(0,len(sorted_dict)):
+        print(f"{sorted_dict[i]["char"]}: {sorted_dict[i]["num"]}")
+    print("============= END ===============")
+    
 
 main()
